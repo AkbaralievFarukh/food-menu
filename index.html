@@ -11,15 +11,15 @@
 </head>
 <body>
     <header class="header">
-        <div class="container header-wrapper">
+        <div class="container d-flex justify-content-between align-items-center">
             <img src="./assets/logo.png" alt="" class="logo">
             <nav class="nav">
-                <ul class="nav-menu">
+                <ul class="nav-menu  d-flex align-items-center gap-3 list-unstyled m-0">
                     <li class="nav-menu__item">
-                        <a href="#" class="nav-menu__item-link text-white" id="home-btn">Home</a>
+                        <a href="#" class="nav-menu__item-link text-white text-decoration-none" id="home-btn">Home</a>
                     </li>
                     <li class="nav-menu__item">
-                        <a href="#" class="nav-menu__item-link text-white" id="search">Search</a>
+                        <a href="#" class="nav-menu__item-link text-white text-decoration-none" id="search">Search</a>
                     </li>
                 </ul>
             </nav>
@@ -28,7 +28,7 @@
     <main>
         <section>
             <div class="container">
-                <div id="search-block" class="hidden">
+                <div id="search-block" class="hidden d-flex justify-content-center align-items-center mt-4 mb-4">
                     <input id="search-input" type="text" placeholder="Введите название">
                     <button id="search-btn">Search</button>
                 </div>
@@ -36,7 +36,7 @@
 
                 </div>
                 <div class="latest">
-                    <h2 class="latest-text">Latest Meals</h2>
+                    <h2 class="latest-text text-center mt-4 mb-4">Latest Meals</h2>
                     <div class="row" id="latest-meal"></div>
                 </div>
             </div>

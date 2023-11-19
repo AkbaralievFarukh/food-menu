@@ -8,14 +8,6 @@
     color: white;
 }
 
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
 body {
     background-color: #2D2013;
 }
@@ -36,23 +28,6 @@ body {
     padding: 25px 0;
 }
 
-.header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-menu {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.latest-text {
-    text-align: center;
-    margin: 20px 0;
-}
-
 .nav-menu__item:nth-child(1) {
     padding: 5px 12px;
     background-color: #C42D2F;
@@ -63,12 +38,7 @@ body {
     display: none !important;
 }
 
-#search-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
+
 
 #search-input {
     max-width: 300px;
