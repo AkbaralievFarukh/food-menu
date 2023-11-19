@@ -15,10 +15,10 @@
             <nav class="nav">
                 <ul class="nav-menu">
                     <li class="nav-menu__item">
-                        <a href="#" class="nav-menu__item-link">Home</a>
+                        <a href="#" class="nav-menu__item-link" id="home-btn">Home</a>
                     </li>
                     <li class="nav-menu__item">
-                        <a href="#" class="nav-menu__item-link">Search</a>
+                        <a href="#" class="nav-menu__item-link" id="search">Search</a>
                     </li>
                 </ul>
             </nav>
@@ -27,8 +27,17 @@
     <main>
         <section>
             <div class="container">
-                <h2 class="latest-text">Latest Meals</h2>
-                <div class="row"></div>
+                <div id="search-block" class="hidden">
+                    <input id="search-input" type="text" placeholder="Введите название">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div id="card">
+
+                </div>
+                <div class="latest">
+                    <h2 class="latest-text">Latest Meals</h2>
+                    <div class="row" id="latest-meal"></div>
+                </div>
             </div>
         </section>
     </main>
