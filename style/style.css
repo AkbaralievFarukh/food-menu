@@ -26,6 +26,11 @@ body {
     margin: 0 auto;
 }
 
+.box img {
+    width: 100%;
+    object-fit: contain;
+}
+
 .header {
     background-color: #22180D;
     padding: 25px 0;
@@ -41,22 +46,6 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
-
-.col-3 {
-    width: 25%;
-    padding: 15px;
-}
-
-.box img {
-    width: 100%;
-    object-fit: contain;
 }
 
 .latest-text {
@@ -100,11 +89,4 @@ body {
 #card {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-}
-
-.card-img img {
-    width: 100%;
-    object-fit: contain;
 }

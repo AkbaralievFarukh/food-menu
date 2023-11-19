@@ -1,5 +1,6 @@
 const apiUrlLatest = 'https://www.themealdb.com/api/json/v2/1/latest.php'
 const apiUrlName = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
+const apiUrlImg = 'https://www.themealdb.com/images/ingredients/'
 const latestMeal = document.querySelector('#latest-meal')
 const search = document.querySelector('#search')
 const latest = document.querySelector('.latest')
@@ -13,7 +14,7 @@ const handleGetLatestMeals = () => {
         .then(data => {
             data.meals.forEach(meal => {
                 latestMeal.innerHTML += `
-                     <div class="col-3">
+                     <div class="col-md-3">
                         <div class="box">
                             <img class="img-meal" src="${meal.strMealThumb}" alt="">
                             <h4 class="name-meal">${meal.strMeal}</h4>
@@ -27,6 +28,18 @@ const handleGetLatestMeals = () => {
     card.classList.add('hidden')
 }
 
+function filterIngredients(meal) {
+    const ingredientKeys = [];
+
+    for (const key in meal) {
+        if (key.startsWith("strIngredient") && meal[key] !== null && meal[key] !== "") {
+            ingredientKeys.push(key);
+        }
+    }
+
+    return ingredientKeys;
+}
+
 const handleGetMealByName = () => {
     const searchInput = document.querySelector('#search-input')
     let name = searchInput.value
@@ -34,19 +47,26 @@ const handleGetMealByName = () => {
         .then(response => response.json())
         .then(data => {
             data.meals.forEach(meal => {
+                let ingredientKeys = filterIngredients(meal);
                 card.innerHTML += `
-                     <div class="card-img">
-                        <h2>${meal.strMeal}</h2>
-                        <img src="" alt="">
+                     <div class="col-md-5">
+                        <div class="box">
+                            <h2>${meal.strMeal}</h2>
+                            <img src="${meal.strMealThumb}" alt="">
+                        </div>
                     </div>
-                    <div class="card-info">
-                        <h2>Ingredients</h2>
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="box">
-                                    <img src="${meal.strMealThumb}" alt="">
-                                    <h2>${meal.strIngredient1}</h2>
+                    <div class="col-md-7">
+                        <div class="box">
+                            <h2>Ingredients</h2>
+                            <div class="row">
+                                ${ingredientKeys.map(key => `
+                                <div class="col-md-4">
+                                    <div class="box">
+                                        <img src="${apiUrlImg}${meal[key]}.png" alt="${meal[key]}">
+                                        <h2>${meal[key]}</h2>
+                                    </div>
                                 </div>
+                            `).join('')}
                             </div>
                         </div>
                     </div>
