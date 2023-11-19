@@ -43,6 +43,7 @@ function filterIngredients(meal) {
 const handleGetMealByName = () => {
     const searchInput = document.querySelector('#search-input')
     let name = searchInput.value
+    card.innerHTML = '';
     fetch(`${apiUrlName}${name}`)
         .then(response => response.json())
         .then(data => {
