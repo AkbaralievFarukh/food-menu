@@ -14,7 +14,7 @@ const handleGetLatestMeals = () => {
         .then(data => {
             data.meals.forEach(meal => {
                 latestMeal.innerHTML += `
-                     <div class="col-md-3">
+                     <div class="col-md-3 col-6">
                         <div class="box">
                             <img class="img-meal" src="${meal.strMealThumb}" alt="">
                             <h4 class="name-meal">${meal.strMeal}</h4>
@@ -61,10 +61,10 @@ const handleGetMealByName = () => {
                             <h2>Ingredients</h2>
                             <div class="row">
                                 ${ingredientKeys.map(key => `
-                                <div class="col-md-4">
+                                <div class="col-md-3 col-4" >
                                     <div class="box">
                                         <img src="${apiUrlImg}${meal[key]}.png" alt="${meal[key]}">
-                                        <h2>${meal[key]}</h2>
+                                        <h4>${meal[key]}</h4>
                                     </div>
                                 </div>
                             `).join('')}
